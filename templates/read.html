@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %} 
+<title> Create Data </title>
+{% endblock %}
+
+{% block body %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Hobbies</th>
+        <th scope="col">Country</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for data in datas %}
+      <tr>
+        <th scope="row">{{ data.id }}</th>
+        <td>{{ data.first_name }}</td>
+        <td>{{ data.last_name }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.password }}</td>
+        <td>{{ data.gender }}</td>
+        <td>{{ data.hobbies }}</td>
+        <td>{{ data.country }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endblock %}

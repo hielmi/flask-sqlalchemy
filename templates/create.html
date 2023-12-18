@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block title %} 
+<title> Create Data </title>
+{% endblock %}
+
+{% block body%}
+<div class="container mt-5">
+    <form method="post">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lastname">Last Name</label>
+          <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="hobbies">Hobbies</label>
+          <input type="text" class="form-control" id="hobbies" name="hobbies" placeholder="Enter Hobbies">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="country">Country</label>
+          <select class="form-control" id="country" name="country">
+            <!-- ASEAN Countries -->
+            <option value="brunei">Brunei</option>
+            <option value="cambodia">Cambodia</option>
+            <option value="indonesia">Indonesia</option>
+            <option value="laos">Laos</option>
+            <option value="malaysia">Malaysia</option>
+            <option value="myanmar">Myanmar</option>
+            <option value="philippines">Philippines</option>
+            <option value="singapore">Singapore</option>
+            <option value="thailand">Thailand</option>
+            <option value="vietnam">Vietnam</option>
+
+            <!-- Other Countries -->
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <!-- Add more countries as needed -->
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    {% if success == True %}
+    <div class="alert alert-success mt-3" role="alert">
+        Data successfully added to the database!
+    </div>
+    {% elif success == False %}
+    <div class="alert alert-danger mt-3" role="alert">
+        Failed to add data to the database. Please try again.
+    </div>
+    {% endif %}
+{% endblock %}
